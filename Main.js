@@ -56,24 +56,49 @@ document.querySelectorAll('.carousel-item img').forEach((img, index) => {
             {
                 title: "El ladrón de cuerpos",
                 image: "image/7112AxVz8VL._AC_SX148_SY213_QL70_.jpg",
-                description: "",
-                parts: 57,
-                status: "Finished"
+                description: "Con la revelación de una red que secuestra personas para extraer órganos y abastecer a los ricos y poderosos, Marta y su equipo se sumergen en un submundo de secretos, traiciones y peligro extremo. Mientras luchan contra la burocracia, deben desentrañar la red y detener a sus cabecillas antes de que más vidas sean sacrificadas. En una carrera contrarreloj, Marta debe tomar decisiones difíciles antes de un enfrentamiento final lleno de suspense que la llevará al límite en su búsqueda de justicia.",
+                Pages: 292,
+                status: "Finished",
             },
             {
                 title: "Redes de Eloy Moreno",
                 image: "image/71qlSpgJHBL._AC_UF894,1000_QL80_.jpg",
-                description: "Un libro sobre las complejidades de las redes sociales.",
-                parts: 5,
-                status: "Concluido"
+                description: "Emotiva, conmovedora, diferente... Redes narra, a traves de los ojos de una adolescente, una historia que se ha convertido en la realidad de todos nosotros. ¿Cuántos likes vale tu felicidad? Se pasa unas horas más viendo los viajes maravillosos, los cuerpos perfectos y todos los outfits que se prueban cada día los influencers. Y se siente mal porque ella no puede llevar la vida que ve en las redes, sabe que nunca podrá alcanzar una felicidad así.",
+                Pages: 288,
+                status: "Finished"
             },
             {
-                title: "El ladrón de cuerpos",
+                title: "El exilio de la vida",
                 image: "image/61QwCX7SFvL._AC_UF1000,1000_QL80_.jpg",
-                description: "Una historia sobre el robo de cuerpos y las consecuencias.",
-                parts: 46,
-                status: "En progreso"
-            }
+                description: "El exilio de la vida, es una historia de ficción, cuenta un poco sobre la crisis de adulto de un profesor de historia, de mediana edad, que huye de la rutina, de sus penas y frustraciones, en busca de esa “chispa de felicidad” que justifique el valor de su existencia.",
+                Pages: 79,
+                status: "Finished"
+            },
+
+            {
+                title: "Los caminos del agua",
+                image: "image/51Ya0TP1vYL._AC_UF1000,1000_QL80_.jpg",
+                description: "Con la premura del ser y el imperceptible impulso del poeta, Armando López Carralero se adentra en la profundidad de unas aguas que conoce bien, porque están mezcladas con su impaciencia y esa parsimonia que disfraza al caminante.",
+                Pages: 92,
+                status: "Finished"
+            },
+
+            {
+                title: "Dos minutos bajo el agua",
+                image: "image/61IPDCStv1L._AC_UF894,1000_QL80_.jpg",
+                description: "Dejar atrás el cuerpo del ser amado, viajar sin retorno al tiempo de la felicidad, emigrar y descubrir los vínculos esenciales. En esas aguas se sumergen los poemas de Gustavo Manrique para remover los recuerdos, los sentimientos y la pérdida.",
+                Pages: 52,
+                status: "Finished"
+            },
+
+            {
+                title: "Nos dimos un tiempo",
+                image: "image/61kFnJYkohL._AC_UF894,1000_QL80_.jpg",
+                description: "`Nos Dimos un Tiempo` es una obra que despierta el interés desde la primera página, te invita a explorar las complejidades del amor adolescente y te deja deseando más al final. Anímate a leerla y añádela a tu lista de imprescindibles. Un viaje a través de las emociones, de la amistad y del amor espera por ti en cada página.",
+                Pages: 230,
+                status: "Finished"
+            },
+
         ];
 
         const book = books[index]; // Obtener los datos del libro actual
