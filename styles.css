@@ -1,3 +1,4 @@
+/* Reinicio de estilos */
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +6,17 @@
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Arial', sans-serif; /* Cambié la fuente para una mejor legibilidad */
     color: #fff;
-    background-color: #cc477e;
+    background-color: #cc477e; /* Color de fondo vibrante */
 }
 
+/* Estilos del encabezado */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.05 20px;
+    padding: 0.04 20px;
     background-color: #ffffff;
     height: 100px;
 }
@@ -28,82 +30,61 @@ header .logo img {
 nav ul {
     list-style-type: none;
     display: flex;
-    gap: 15px;
+    gap: 28px; /* Espacio aumentado entre los enlaces */
+    
 }
 
 nav ul li a {
     color: #000547;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: bold;
     transition: color 0.3s;
-    margin-right: 35px;
 }
 
 nav ul li a:hover {
-    color: #cccccc;
+    color: #cc477e; /* Cambio de color en el hover */
 }
 
+/* Estilos de secciones */
 section {
     padding: 50px 0;
     text-align: center;
 }
 
 section h2 {
-    color: rgb(0, 0, 0);
+    color: #000; /* Color de texto de los encabezados */
     margin-bottom: 20px;
 }
 
-/*Cambio para mejor funcionamiento*/
+/* Estilos del carrusel */
 .carousel-container {
     position: relative;
-    width: 100%; /* Ajusta el ancho del carrusel al 100% del contenedor */
+    width: 100%; /* Ancho del carrusel */
     max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden; 
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave en el carrusel */
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
+    transition: transform 0.5s ease-in-out; /* Animación suave al mover el carrusel */
 }
 
 .carousel-item {
-    width: 250px; /* Establecer un ancho fijo para los elementos */
-    padding: 15px; /* Ajustar el padding en lugar del margin */
+    min-width: 200px;
+    margin: 25px;
     text-align: center;
 }
 
 .carousel-item img {
-    width: 200px; /* Mantener el ancho del 100% del contenedor */
-    height: auto; /* Mantener la relación de aspecto */
-    border-radius: 10px;
+    width: 95%; /* Tamaño de las imágenes */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados en las imágenes */
 }
 
-
-.progress-bar {
-    width: 100%;
-    background-color: #ccc;
-    height: 5px;
-    border-radius: 2px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-.progress-bar-inner {
-    height: 100%;
-    background-color: #4caf50;
-    width: 0; /* Esto se ajustará dinámicamente */
-}
-
-.parts-remaining {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #000;
-}
-
+/* Controles del carrusel */
 .carousel-control {
     position: absolute;
     top: 50%;
@@ -126,11 +107,8 @@ section h2 {
 }
 
 .carousel-control:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Efecto hover más oscuro */
 }
-
-
-/*Pagina emergente con la información*/
 
 /* Estilos del modal */
 .modal {
@@ -140,22 +118,23 @@ section h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #fff; /* Fondo blanco para el contenido */
     padding: 20px;
     border-radius: 10px;
     width: 80%;
     max-width: 500px;
     position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave en el modal */
 }
 
 .modal-content img {
-    width: 50%;
+    width: 50%; /* Tamaño de la imagen del libro */
     height: auto;
     margin-bottom: 10px;
 }
@@ -179,32 +158,97 @@ section h2 {
 
 .modal p {
     margin-top: 10px;
-    color: #333;
+    color: #333; /* Color de texto en el modal */
 }
 
 .book-status {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
 }
 
-.book-status span {
-    font-weight: bold;
-    background-color: #4caf50;
-    color: #fff;
-    padding: 3px 10px;
+.completed {
+    color: green; /* Color verde para el estado completado */
+}
+
+/* Estilos de los botones */
+.btn-leer-ahora {
+    background-color: #cc477e; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#booklist-content, #libraries-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+.btn-leer-ahora:hover {
+    background-color: #c53e6b; /* Efecto hover en el botón */
 }
 
-#booklist-content.active, #libraries-content.active {
-    max-height: 500px; /* Puedes ajustar este valor según lo que necesites */
+/* Estilos de las listas */
+ul {
+    list-style-type: none;
 }
 
+ul li {
+    margin: 10px 0; /* Espacio entre elementos de la lista */
+    color: #000; /* Color de texto en las listas */
+}
+
+/* Estilos de búsqueda */
+#searchQuery {
+    padding: 10px;
+    width: 200px; /* Ancho del campo de búsqueda */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    align-content: center;
+    
+}
+
+
+
+#bookList {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los libros se alineen en varias filas */
+    justify-content: center; /* Centra los libros */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.book {
+    background-color: #fff; /* Fondo blanco para los libros */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 150px; /* Ancho de cada libro */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Efecto de hover */
+}
+
+.book:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.book h3 {
+    font-size: 16px; /* Tamaño de título */
+    margin: 5px 0;
+}
+
+.book p {
+    font-size: 14px; /* Tamaño del autor */
+    color: #555; /* Color gris para el autor */
+}
+
+.book a {
+    display: block; /* Asegura que el enlace ocupe toda la línea */
+    text-align: center;
+    margin-top: 10px; /* Espaciado superior */
+    color: #007bff; /* Color de enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.book a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
 

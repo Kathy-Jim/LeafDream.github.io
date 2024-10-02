@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#Library">Your library</a></li>
-                <li><a href="#BookList">Interest</a></li>
+                <li><a href="#Search">Search</a></li>
             </ul>
         </nav>
     </header>
@@ -45,33 +45,13 @@
                     <img src="image/61kFnJYkohL._AC_UF894,1000_QL80_.jpg">
                 </div>
             </div>
-            <button class="carousel-control prev" onclick="carouselInstance.move(-1)">&#10094;</button>
-            <button class="carousel-control next" onclick="carouselInstance.move(1)">&#10095;</button>
-
+            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
         </div>
 
         <script src="Main.js"></script>
     </section>
 
-    <section id="BookList" class="booklist">
-    <h2 onclick="toggleBookList()">Booklist</h2>
-    <ul id="booklist-content" style="display:none;">
-        <li>The Invisible Man</li>
-        <li>1984</li>
-        <li>Brave New World</li>
-        <li>Fahrenheit 451</li>
-    </ul>
-</section>
-
-<section id="Libraries" class="sites">
-    <h2 onclick="toggleLibraries()">Libraries</h2>
-    <ul id="libraries-content" style="display:none;">
-        <li>New York Public Library</li>
-        <li>Library of Congress</li>
-        <li>British Library</li>
-        <li>Biblioteca Nacional de España</li>
-    </ul>
-</section>
 
     <!-- Ventana modal -->
     <div id="bookModal" class="modal">
@@ -91,6 +71,16 @@
             <button class="btn-leer-ahora">Read now!</button>
         </div>
     </div>
+
+    <section id="Search" class="api">
+        <h2>Search books</h2>
+
+    <input class="search" type="text" id="searchQuery" placeholder="Search for books...">
+<button onclick="searchBooks()">Search</button>
+
+<div id="bookList">
+
+</section>
 
 </body>
 </html>
