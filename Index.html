@@ -27,10 +27,10 @@
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-item">
-                    <img src="c:\Users\katherineAndreaJimen\Desktop\LeafDream- Website\image\7112AxVz8VL._AC_SX148_SY213_QL70_.jpg" alt="Invisible de Eloy Moreno">
+                    <img src="image/7112AxVz8VL._AC_SX148_SY213_QL70_.jpg" alt="Invisible de Eloy Moreno">
                 </div>
                 <div class="carousel-item">
-                    <img src="c:\Users\katherineAndreaJimen\Desktop\LeafDream- Website\image\71qlSpgJHBL._AC_UF894,1000_QL80_.jpg" alt="Redes de Eloy Moreno">
+                    <img src="image/71qlSpgJHBL._AC_UF894,1000_QL80_.jpg" alt="Redes de Eloy Moreno">
                 </div>
                 <div class="carousel-item">
                     <img src="image/61QwCX7SFvL._AC_UF1000,1000_QL80_.jpg" alt="El ladrón de cuerpos">
@@ -45,20 +45,33 @@
                     <img src="image/61kFnJYkohL._AC_UF894,1000_QL80_.jpg">
                 </div>
             </div>
-            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+            <button class="carousel-control prev" onclick="carouselInstance.move(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="carouselInstance.move(1)">&#10095;</button>
+
         </div>
 
         <script src="Main.js"></script>
     </section>
 
     <section id="BookList" class="booklist">
-        <h2>Booklist</h2>
-    </section>
+    <h2 onclick="toggleBookList()">Booklist</h2>
+    <ul id="booklist-content" style="display:none;">
+        <li>The Invisible Man</li>
+        <li>1984</li>
+        <li>Brave New World</li>
+        <li>Fahrenheit 451</li>
+    </ul>
+</section>
 
-    <section id="Libraries" class="sites">
-        <h2>Libraries</h2>
-    </section>
+<section id="Libraries" class="sites">
+    <h2 onclick="toggleLibraries()">Libraries</h2>
+    <ul id="libraries-content" style="display:none;">
+        <li>New York Public Library</li>
+        <li>Library of Congress</li>
+        <li>British Library</li>
+        <li>Biblioteca Nacional de España</li>
+    </ul>
+</section>
 
     <!-- Ventana modal -->
     <div id="bookModal" class="modal">

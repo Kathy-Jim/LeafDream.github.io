@@ -1,27 +1,49 @@
-let currentIndex = 0;
-const itemsVisible = 3; // Número de libros visibles al mismo tiempo
-
-function moveCarousel(direction) {
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-
-    // Calcula el nuevo índice
-    currentIndex = (currentIndex + direction + items.length) % items.length;
-
-    // Asegura que no muestre más libros de los que hay
-    const maxIndex = items.length - itemsVisible;
-    if (currentIndex > maxIndex) {
-        currentIndex = maxIndex;
-    }
-    if (currentIndex < 0) {
-        currentIndex = 0;
+class Carousel {
+    constructor() {
+        if (Carousel.instance) {
+            return Carousel.instance;
+        }
+        this.currentIndex = 0;
+        this.carousel = document.querySelector('.carousel');
+        this.items = document.querySelectorAll('.carousel-item');
+        this.updateItemsVisible();
+        Carousel.instance = this;
+        return this;
     }
 
-    // Mueve el carrusel
-    const translateX = -currentIndex * (100 / itemsVisible);
-    carousel.style.transform = `translateX(${translateX}%)`;
+    updateItemsVisible() {
+        const carouselWidth = this.carousel.parentElement.offsetWidth;
+        const itemWidth = this.items[0].offsetWidth;
+        this.itemsVisible = Math.floor(carouselWidth / itemWidth);
+        // Asegurar que siempre haya al menos un ítem visible
+        if (this.itemsVisible < 1) this.itemsVisible = 1;
+    }
+
+    move(direction) {
+        const totalItems = this.items.length;
+        const maxIndex = totalItems - this.itemsVisible;
+
+        // Actualizar índice en la dirección especificada
+        this.currentIndex = this.currentIndex + direction;
+        
+        if (this.currentIndex > maxIndex) {
+            this.currentIndex = maxIndex; // No pasar el último ítem
+        } else if (this.currentIndex < 0) {
+            this.currentIndex = 0; // No ir más allá del primer ítem
+        }
+
+        // Aplicar el cambio de transformación
+        const translateX = -this.currentIndex * (250 / this.itemsVisible);
+        this.carousel.style.transform = `translateX(${translateX}%)`;
+    }
 }
 
+const carouselInstance = new Carousel();
+
+// Actualizar el número de ítems visibles al cambiar el tamaño de la ventana
+window.addEventListener('resize', () => {
+    carouselInstance.updateItemsVisible();
+});
 
 
 

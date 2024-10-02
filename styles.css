@@ -53,9 +53,10 @@ section h2 {
     margin-bottom: 20px;
 }
 
+/*Cambio para mejor funcionamiento*/
 .carousel-container {
     position: relative;
-    width: 1000px; /* Ajusta el ancho del carrusel */
+    width: 100%; /* Ajusta el ancho del carrusel al 100% del contenedor */
     max-width: 1000px;
     margin: 0 auto;
     overflow: hidden; 
@@ -66,13 +67,16 @@ section h2 {
 .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .carousel-item {
     min-width: 200px;
+    flex: 1; /* Cada elemento ocupa el mismo espacio */
     margin: 25px;
     text-align: center;
 }
+
 
 .carousel-item img {
     width: 95%; /*Cambie el tamaño*/
@@ -192,4 +196,14 @@ section h2 {
     color: #fff;
     padding: 3px 10px;
     border-radius: 5px;
+}
+
+#booklist-content, #libraries-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+#booklist-content.active, #libraries-content.active {
+    max-height: 500px; /* Puedes ajustar este valor según lo que necesites */
 }
