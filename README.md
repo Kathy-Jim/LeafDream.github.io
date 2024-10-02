@@ -11,7 +11,6 @@ LeafDream is an online book recommendation site that integrates with multiple bo
 - Search for books from Google Books and Amazon.
 - View book information including title, author, and purchase links.
 
-## How to Run
-1. Clone the repository.
-2. Open index.html in a browser.
-3. Use the search bar to look for books.
+##How to run
+1. Enter to one browser
+2. And copy this link: https://kathy-jim.github.io/LeafDream.github.io/Index.html 
