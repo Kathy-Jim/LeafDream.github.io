@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    background-color: #cc477e;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.05 20px;
+    background-color: #ffffff;
+    height: 100px;
+}
+
+header .logo img {
+    width: 200px;
+    height: auto;
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #000547;
+    text-decoration: none;
+    font-weight: bolder;
+    transition: color 0.3s;
+    margin-right: 35px;
+}
+
+nav ul li a:hover {
+    color: #cccccc;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+section h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 1000px; /* Ajusta el ancho del carrusel */
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 200px;
+    margin: 25px;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 95%; /*Cambie el tamaño*/
+    height: auto;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ccc;
+    height: 5px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0; /* Esto se ajustará dinámicamente */
+}
+
+.parts-remaining {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #000;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/*Pagina emergente con la información*/
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-content img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.modal-close {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal p {
+    margin-top: 10px;
+    color: #333;
+}
+
+.book-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.book-status span {
+    font-weight: bold;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafDream</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="image/5b6fef63ccc04a5b91df2b1df0366719-free-removebg-preview (1) (1).png" alt="LeafDream">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Library">Your library</a></li>
+                <li><a href="#BookList">Interest</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Library" class="hill">
+        <h2>Your library</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="c:\Users\katherineAndreaJimen\Desktop\LeafDream- Website\image\7112AxVz8VL._AC_SX148_SY213_QL70_.jpg" alt="Invisible de Eloy Moreno">
+                </div>
+                <div class="carousel-item">
+                    <img src="c:\Users\katherineAndreaJimen\Desktop\LeafDream- Website\image\71qlSpgJHBL._AC_UF894,1000_QL80_.jpg" alt="Redes de Eloy Moreno">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/61QwCX7SFvL._AC_UF1000,1000_QL80_.jpg" alt="El ladrón de cuerpos">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/51Ya0TP1vYL._AC_UF1000,1000_QL80_.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/61IPDCStv1L._AC_UF894,1000_QL80_.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/61kFnJYkohL._AC_UF894,1000_QL80_.jpg">
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+
+        <script src="Main.js"></script>
+    </section>
+
+    <section id="BookList" class="booklist">
+        <h2>Booklist</h2>
+    </section>
+
+    <section id="Libraries" class="sites">
+        <h2>Libraries</h2>
+    </section>
+
+    <!-- Ventana modal -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="bookTitle">Título del libro</h2>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <img id="bookImage" src="" alt="Portada del libro">
+            <p id="bookDescription">UN NUEVO CASO DE LA INSPECTORA ESCUDERO.
+                Entre la vida y la muerte. Una lucha desesperada por las almas olvidadas.
+                Alicante. Diciembre de 2015.</p>
+            <div class="book-status">
+                <span id="bookParts">41 parts</span>
+                <span id="bookStatus" class="completed">Concluido</span>
+            </div>
+            <button class="btn-leer-ahora">Read now!</button>
+        </div>
+    </div>
+
+</body>
+</html>
