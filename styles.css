@@ -71,18 +71,17 @@ section h2 {
 }
 
 .carousel-item {
-    min-width: 200px;
-    flex: 1; /* Cada elemento ocupa el mismo espacio */
-    margin: 25px;
+    width: 250px; /* Establecer un ancho fijo para los elementos */
+    padding: 15px; /* Ajustar el padding en lugar del margin */
     text-align: center;
 }
 
-
 .carousel-item img {
-    width: 95%; /*Cambie el tamaño*/
-    height: auto;
+    width: 200px; /* Mantener el ancho del 100% del contenedor */
+    height: auto; /* Mantener la relación de aspecto */
     border-radius: 10px;
 }
+
 
 .progress-bar {
     width: 100%;
@@ -207,3 +206,5 @@ section h2 {
 #booklist-content.active, #libraries-content.active {
     max-height: 500px; /* Puedes ajustar este valor según lo que necesites */
 }
+
+

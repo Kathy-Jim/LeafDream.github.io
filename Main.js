@@ -33,7 +33,7 @@ class Carousel {
         }
 
         // Aplicar el cambio de transformación
-        const translateX = -this.currentIndex * (250 / this.itemsVisible);
+        const translateX = -this.currentIndex * (250 / this.itemsVisible); // Cambiar a porcentaje
         this.carousel.style.transform = `translateX(${translateX}%)`;
     }
 }
@@ -44,6 +44,7 @@ const carouselInstance = new Carousel();
 window.addEventListener('resize', () => {
     carouselInstance.updateItemsVisible();
 });
+
 
 
 
