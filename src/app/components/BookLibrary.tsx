@@ -87,7 +87,7 @@ export default function BookLibrary() {
         ];
 
         // Muestra todos los resultados de Google (GoogleBookItem) y Amazon (IBook)
-        setSearchResults([...googleResults, ...amazonResults]); 
+        const [searchResults, setSearchResults] = useState<(GoogleBookItem | IBook)[]>([]); 
     };
 
     // --- RENDERIZADO ---
