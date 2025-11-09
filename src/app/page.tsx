@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import BookLibrary from '../components/BookLibrary';
+import BookLibrary from './components/BookLibrary';
 
 export default function Home() {
   return (
