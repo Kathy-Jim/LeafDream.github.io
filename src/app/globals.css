@@ -35,7 +35,7 @@ body {
 body {
     font-family: 'Arial', sans-serif; /* Cambié la fuente para una mejor legibilidad */
     color: #fff;
-    background-color: #cc477e; /* Color de fondo vibrante */
+    background-color: #ff7070; /* Color de fondo vibrante */
 }
 
 /* Estilos del encabezado */
@@ -69,7 +69,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #cc477e; /* Cambio de color en el hover */
+    color: rgb(255, 40, 208); /* Cambio de color en el hover */
 }
 
 /* Estilos de secciones */
@@ -87,26 +87,28 @@ section h2 {
 .carousel-container {
     position: relative;
     width: 100%; /* Ancho del carrusel */
-    max-width: 1000px;
+    max-width: 600px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave en el carrusel */
+    box-shadow: 0 4px 10px rgb(0, 0, 0); /* Sombra suave en el carrusel */
 }
 
 .carousel {
     display: flex;
+    width: auto;
+    flex-wrap: nowrap;
     transition: transform 0.5s ease-in-out; /* Animación suave al mover el carrusel */
 }
 
 .carousel-item {
-    min-width: 200px;
-    margin: 25px;
+    min-width: 0;
+    margin: 15px 10px;
     text-align: center;
 }
 
 .carousel-item img {
-    width: 95%; /* Tamaño de las imágenes */
+    width: 80%; /* Tamaño de las imágenes */
     height: auto;
     border-radius: 10px; /* Bordes redondeados en las imágenes */
 }
@@ -162,7 +164,7 @@ section h2 {
 
 .modal-content img {
     width: 50%; /* Tamaño de la imagen del libro */
-    height: auto;
+    height: 50%;
     margin-bottom: 10px;
 }
 
@@ -233,7 +235,6 @@ ul li {
     align-content: center;
     
 }
-
 
 
 #bookList {

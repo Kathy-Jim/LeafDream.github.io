@@ -7,9 +7,8 @@ export default function Home() {
     <>
       <header>
         <div className="logo">
-          {/* Asegúrate de que esta imagen exista en public/image/ */}
           <Image 
-            src="/image/5b6fef63ccc04a5b91df2b1df0366719-free-removebg-preview (1) (1).png" 
+            src="/img/image.png" 
             alt="LeafDream" 
             width={200}
             height={50}

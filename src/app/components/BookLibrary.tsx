@@ -1,34 +1,41 @@
-'use client'; 
+'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { LocalBook, GoogleBookItem, IBook } from '../types/book';
-import { GoogleBooksAPI } from '../API/api.clases';
+import { GoogleBooksAPI } from '../API/api.clases'; // Asumiendo que esta ruta es correcta
 
 // --- Datos Fijos de los Libros del Carrusel ---
 const localBooks: LocalBook[] = [
     {
         title: "El ladrón de cuerpos",
-        image: "/image/7112AxVz8VL._AC_SX148_SY213_QL70_.jpg",
+        image: "/img/Ladron_cuerpos.jpg",
         description: "Con la revelación de una red que secuestra personas para extraer órganos y abastecer a los ricos y poderosos...",
         parts: 292,
         status: "Finished",
     },
     {
         title: "Redes de Eloy Moreno",
-        image: "/image/71qlSpgJHBL._AC_UF894,1000_QL80_.jpg",
+        image: "/img/Redes_Moreno.jpg",
         description: "Emotiva, conmovedora, diferente... Redes narra, a traves de los ojos de una adolescente, una historia...",
         parts: 288,
         status: "Finished",
     },
     {
         title: "El exilio de la vida",
-        image: "/image/61QwCX7SFvL._AC_UF1000,1000_QL80_.jpg",
+        image: "/img/Exilio_vida.jpg",
         description: "El exilio de la vida, es una historia de ficción, cuenta un poco sobre la crisis de adulto de un profesor de historia...",
         parts: 79,
         status: "Finished",
     },
-    // ... agrega el resto de tus libros locales aquí ...
+
+    {
+        title: "Los Caminos del Agua",
+        image: "/img/Caminos_delagua.jpg",
+        description: "En un mundo donde el agua se ha convertido en el recurso más preciado y escaso, la humanidad lucha por sobrevivir...",
+        parts: 350,
+        status: "In Progress",
+    },
 ];
 
 
@@ -74,20 +81,20 @@ export default function BookLibrary() {
 
     // --- Lógica de Búsqueda ---
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState<GoogleBookItem[] | IBook[]>([]);
+    // Corregido para aceptar arrays mezclados de GoogleBookItem o IBook
+    const [searchResults, setSearchResults] = useState<(GoogleBookItem | IBook)[]>([]);
 
     const searchBooks = async () => {
         const api = GoogleBooksAPI.getInstance();
         const googleResults = await api.fetchBooks(searchQuery);
-        
+
         // Simulación de Amazon
         const amazonResults: IBook[] = [
             { title: 'Book 1', author: 'Author 1', price: '$10', link: 'https://amazon.com/book1' },
             { title: 'Book 2', author: 'Author 2', price: '$15', link: 'https://amazon.com/book2' }
         ];
 
-        // Muestra todos los resultados de Google (GoogleBookItem) y Amazon (IBook)
-        const [searchResults, setSearchResults] = useState<(GoogleBookItem | IBook)[]>([]); 
+        setSearchResults([...googleResults, ...amazonResults]);
     };
 
     // --- RENDERIZADO ---
@@ -99,16 +106,16 @@ export default function BookLibrary() {
                 <div className="carousel-container">
                     <div className="carousel" ref={carouselRef}>
                         {localBooks.map((book, index) => (
-                            <div 
-                                className="carousel-item" 
-                                key={index} 
+                            <div
+                                className="carousel-item"
+                                key={index}
                                 onClick={() => openModal(book)} // Evento click de React
                                 style={{ flex: `0 0 ${100 / itemsVisible}%` }} // Para que quepan 3 items
                             >
-                                <Image 
-                                    src={book.image} 
-                                    alt={book.title} 
-                                    width={148} 
+                                <Image
+                                    src={book.image}
+                                    alt={book.title}
+                                    width={148}
                                     height={213}
                                 />
                             </div>
@@ -123,10 +130,10 @@ export default function BookLibrary() {
             {/* Sección de Búsqueda */}
             <section id="Search" className="api">
                 <h2>Search books</h2>
-                <input 
-                    className="search" 
-                    type="text" 
-                    id="searchQuery" 
+                <input
+                    className="search"
+                    type="text"
+                    id="searchQuery"
                     placeholder="Search for books..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)} // Captura el input
@@ -137,14 +144,14 @@ export default function BookLibrary() {
                     {/* Renderiza los resultados */}
                     {searchResults.map((book, index) => (
                         <div className="book" key={index}>
-                             {'volumeInfo' in book ? (
+                            {'volumeInfo' in book ? (
                                 // Resultado de Google Books
                                 <>
-                                    <Image 
-                                        src={book.volumeInfo.imageLinks?.thumbnail || '/placeholder.jpg'} 
-                                        alt="Cover image" 
-                                        width={128} 
-                                        height={192} 
+                                    <Image
+                                        src={book.volumeInfo.imageLinks?.thumbnail || '/placeholder.jpg'}
+                                        alt="Cover image"
+                                        width={128}
+                                        height={192}
                                     />
                                     <h3>{book.volumeInfo.title}</h3>
                                     <p>{book.volumeInfo.authors?.[0] || 'Unknown Author'}</p>
